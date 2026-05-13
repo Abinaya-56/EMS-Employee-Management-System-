@@ -1,13 +1,11 @@
 # HR Management System (EMS)
 
-A simple full-stack JavaScript HR management system with:
-- Staff and HR admin login
-- Staff attendance marking (present/absent)
-- Staff leave request with status tracking
-- HR announcements visible to all staff
-- HR chatbot panel
-- Individual employee performance and attendance analytics
-- Department-level performance overview
+A full-stack JavaScript HR management system with:
+- Employee attendance management
+- Leave request workflow
+- Performance tracking
+- Role-based access for admin and employee
+- AI chatbot endpoint for employee-related queries
 
 ## Tech Stack
 - Frontend: React + Vite
@@ -27,15 +25,21 @@ EMS/
 ## Quick Start
 1. Install all dependencies:
    - `npm run install:all`
-2. Ensure MongoDB is running on your machine:
-   - `mongodb://127.0.0.1:27017/ems`
-3. Run both apps:
+2. Copy environment templates:
+   - `cp server/.env.example server/.env`
+   - `cp client/.env.example client/.env`
+3. Start the backend in one terminal:
+   - `cd server`
    - `npm run dev`
+4. Start the frontend in a second terminal:
+   - `cd client`
+   - `npm run dev`
+5. Open the app in your browser:
+   - `http://localhost:5173`
 
-## Default Login Accounts (Auto-seeded)
-When MongoDB is connected and the users collection is empty, these are created automatically:
-- HR Admin: `hr@ems.com` / `admin123`
-- Staff: `staff@ems.com` / `staff123`
+If Vite uses a different port, open the port shown in the terminal output.
+
+When you want to run the project again later, repeat the same backend and frontend steps and keep both terminals open while using the browser.
 
 ## Default Ports
 - Client: 5173
@@ -46,7 +50,4 @@ When MongoDB is connected and the users collection is empty, these are created a
 - `/api/attendance`
 - `/api/leave-requests`
 - `/api/performance`
-- `/api/chatbot` (HR admin only)
-- `/api/announcements`
-- `/api/users`
-- `/api/analytics`
+- `/api/chatbot`
